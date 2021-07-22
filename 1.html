@@ -9,7 +9,14 @@
 
 <body>
     <video src=""></video>
+    <button id="capture">拍照</button>
+    </div>
+    <!--描绘video截图-->
+    <canvas id="canvas" width="480" height="320"></canvas>
+
     <script type="text/javascript">
+        var canvas = document.getElementById("canvas");
+        var context = canvas.getContext("2d");
         var opt = {
             audio: true,
             video: {
@@ -28,6 +35,11 @@
             .catch(function (err) {
                 console.log(err.name + ": " + err.message);
             }); // always check for errors at the end.
+
+        document.getElementById("capture").addEventListener("click", function () {
+            //绘制画面
+            context.drawImage(video, 0, 0, 480, 320);
+        });
     </script>
 </body>
 
