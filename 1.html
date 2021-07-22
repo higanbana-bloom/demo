@@ -11,12 +11,13 @@
     <button id="capture">拍照</button>
     <!--描绘video截图-->
     <canvas id="canvas" width="480" height="320"></canvas>
-    <video src=""></video>
-    
+    <video src="" id="video"></video>
+
 
     <script type="text/javascript">
         var canvas = document.getElementById("canvas");
         var context = canvas.getContext("2d");
+        const video = document.getElementById("video");
         var opt = {
             audio: true,
             video: {
